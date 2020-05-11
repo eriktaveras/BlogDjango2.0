@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="articulos">
+    
+      {% for sobremi in sobremi  %}
+    <article class="contenido">
+
+    <div class="info">
+      <img src="{{sobremi.image.url}}" alt="Erik">
+      <div class='titulo'>
+        <h1>
+       {{sobremi.saludo}}
+    
+        </h1>
+      </div>
+
+      <div>
+        {{sobremi.content |safe}}
+      </div>
+           
+      {% endfor %}
+            
+            
+        </div>
+    </div>
+</article>
+
+{% endblock %}

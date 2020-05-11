@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="articulos">
+    
+    <article class="contenido">
+
+    <div class="info">
+      
+      <div class='titulo'>
+      
+        <h1>
+{{politicas.title}}      </h1>
+      </div>
+
+      <div class='texto'>
+     {{politicas.content|safe}}
+      </div>
+           
+            
+            
+        </div>
+    </div>
+</article>
+{% endblock %}

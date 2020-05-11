@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="articulos">
+    
+    <article class="contenido">
+
+    <div class="info">
+      
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+    <li class="breadcrumb-item active" aria-current="page">{{post.title}}</li>
+  </ol>
+</nav>
+            <img src="{{post.image.url}}" >
+        <div class="insta_img_icon_wrap_ext_el" title="Upload to Instagram" style="top: 528px; left: 273px;"><div class="insta_img_icon_ext_el"></div></div></a>
+        <hr>
+        <p>Publicado en {{post.fecha}}</p>
+        <hr>
+    
+            <h2>{{post.title}}</h2>
+      
+        <div class="texto"><p>{{post.content|safe}}</p></div>
+        
+        <div class="pie">
+            <div class="visitas">
+                24 vistas
+            </div>
+            <nav class="compartir sociales">
+                
+                <ul>
+                    <li>
+                        <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A//cosasdedevs.com/posts/configurar-dominio-y-certificados-gratuitos-a-un-proyecto-en-django/" target="_blank"><span> Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/intent/tweet?text=Configurar%20dominio%20y%20certificados%20gratuitos%20a%20un%20proyecto%20en%20Django%20https%3A//cosasdedevs.com/posts/configurar-dominio-y-certificados-gratuitos-a-un-proyecto-en-django/" target="_blank"><span> Twitter</span></a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </div>
+        <div class="labels">
+            
+                <div class="label"><a href="#">{{post.category}}</a></div>
+            
+            
+        </div>
+    </div>
+</article>
+{% endblock %}
+

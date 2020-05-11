@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<main class="articulos">
+    
+    <article class="contenido">
+
+    <div class="info">
+      
+        
+           <p>imagen aqui</p>
+           {% include 'marketing.html' %}
+{% include 'precios.html' %}
+        <hr>
+        
+{% include 'ultimas_publicaciones.html' %}
+        
+        <div class="pie">
+          
+            <nav class="compartir sociales">
+                
+                <ul>
+                    <li>
+                        <a href="#" target="_blank"><span> Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><span> Twitter</span></a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </div>
+        
+            
+            
+        </div>
+    </div>
+</article>
+{% endblock content %}

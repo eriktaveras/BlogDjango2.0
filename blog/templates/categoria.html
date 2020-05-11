@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for post in post  %}
+
+<main class="articulos">
+        <article class="contenido">
+        <div class="info">
+        <img src="{{post.image.url}}" alt="">
+<div class="titulo">
+<h2>
+<a href="/blog/{{post.id}}">{{post.title}}</a>
+</h2>
+
+</div>
+<div class= "texto">
+{{post.description|safe}}
+
+</div>
+<div class="pie">
+            <div class="visitas">
+               {crear aqui contador de visitas a cada post}
+            </div>
+ <div class="label">{{post.category}}
+ </div>
+
+</article>
+</main>
+
+{% endfor %}
+
+
+{% endblock content %}

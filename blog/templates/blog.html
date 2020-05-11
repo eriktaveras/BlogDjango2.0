@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for post in posts  %}
+
+<main class="articulos">
+    
+    <article class="contenido">
+
+    <div class="info">
+      
+        <a href="{{post.id}}" class="insta_img_parent_ext_el">
+            <img src="{{post.image.url}}" alt="">
+        <div class="insta_img_icon_wrap_ext_el" title="Upload to Instagram" style="top: 528px; left: 273px;"><div class="insta_img_icon_ext_el"></div></div></a>
+        <a href={{post.id}}>
+            <h2>{{post.title}}</h2>
+        </a>
+        <div class="texto"><p>{{post.description|safe}}</p></div>
+        
+        <div class="pie">
+            <div class="visitas">
+               {crear aqui contador de visitas a cada post}
+            </div>
+            <nav class="compartir sociales">
+                
+                <ul>
+                    <li>
+                        <a href="#" target="_blank"><span> Facebook</span></a>
+                    </li>
+                    <li>
+                        <a href="#" target="_blank"><span> Twitter</span></a>
+                    </li>
+                </ul>
+                
+            </nav>
+        </div>
+        <div class="labels">
+            
+                <div class="label"><a href="/categorias">{{post.category}}</a></div>
+            
+            
+        </div>
+    </div>
+</article>
+
+{% endfor %}
+
+{% endblock content %}

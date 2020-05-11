@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="articulos">
+        <article class="contenido">
+        <div class="info">
+        
+
+
+<div class="titulo">
+<h1>Categorias</h1>
+{% for categoria in categorias  %}
+</div>
+<div class = "texto">
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+   <a href="{{categoria.id}}"><h4>{{categoria.title}}</h4></a>
+    <span class="badge badge-primary badge-pill">{{cantidad}}</span>
+  </li>
+</ul>
+{% endfor %}
+</article>
+
+</main>
+
+{% endblock content %}

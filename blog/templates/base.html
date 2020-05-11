@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Desarrollo web en Python y Django | ErikDev</title>
+    <link href="{% static 'css/css.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/shared.css' %}">
+    <link rel="stylesheet" href="{% static '/prism.css'%}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    
+<style type="text/css"></style></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TT9ZRZF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <i class="fas fa-bars bars-button" aria-hidden="true" id="bars-button"></i>
+    {% include 'navbar.html' %}
+
+            <nav class="sociales">
+                <ul>
+                    <li> <a href="http://github.com/eriktaveras" target="_blank"><i class="fa fa-github" style="font-size:24px"></i></a></li>
+                    <li> <a href="http://instagram.com/erikmltaveras" target="_blank"><i class="fa fa-instagram" style="font-size:24px"></i></a></li>
+                    <li> <a href="http://twitter.com/eriktaveras" target="_blank"><i class="fa fa-twitter" style="font-size:24px"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <header class="cabecera">
+        <a href="/">
+            <img id="image-header" src="{%static 'images/header.png' %}" width="auto" alt="logo cosasdedevs" data-insta_upload_ext_elem="1">
+        </a>
+        </header>
+
+{% block content %}
+{% endblock content %}
+
+    
+    <div class="cookies" id="cookies">
+        <div class="panel-cookies">
+            <h3>Nos tomamos en serio tu privacidad</h3>
+            <p>Utilizamos cookies propias y de terceros para mejorar la experiencia del usuario a través de su navegación. Si pulsas entendido aceptas su uso. 
+            <a href="/politicas/1" target="_blank">Ver política de cookies.</a></p>
+            <div>
+                <button id="accept_cookies">Entendido</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="{% static 'js/cookies.min.js' %}"></script>
+    <script src="{% static 'js/prism.js' %}"></script>
+    <script src="{% static 'js/nav.min.js' %}"></script>
+    
+    <script>
+
+        let accept_cookies = getWithExpiry('accept_cookies');
+        if(!accept_cookies) {
+            document.getElementById("cookies").style.display = "grid";
+        }
+
+        document.getElementById("accept_cookies").addEventListener("click", function() {
+            setWithExpiry('accept_cookies', true, 86400000 * 30);
+            document.getElementById("cookies").style.display = "none";
+        });
+    </script>
+    <script>
+        const limit_size_screen = window.matchMedia('screen and (max-width: 768px)');
+        const bars = document.querySelector('.dropdown');
+        const barsButton = document.querySelector('#bars-button');
+
+        function validation(event) {
+            if (event.matches) {
+                barsButton.addEventListener('click', hideShow);
+            } else {
+                barsButton.removeEventListener('click', hideShow);
+            }
+        }
+        validation(limit_size_screen);
+
+        function hideShow() {
+            if (bars.classList.contains('is-active')) {
+                bars.classList.remove('is-active');
+            } else {
+                bars.classList.add('is-active');
+            }
+        }
+
+        
+    </script>
+    
+    
+    <footer class="pie_pagina">
+        <p>© 2019 - 2020 Cosasdedevs, un blog de Alberto Ramírez Caballero<br>Todos los derechos reservados.</p>
+        <p><a href="/politicas/1">Política de cookies</a>
+        </p><p><a href="/politicas/2">Política de privacidad</a>
+    </p></footer>
+     
+    
+
+
+</body></html>
